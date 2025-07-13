@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Teacher extends Person {
+    private String employeeId;
+    private String department;
+    private List<Course> assignCourses;
+
+    public Teacher(String name, int age, String email, String employeeId, String department) {
+        super(name, age, email);
+        this.employeeId = employeeId;
+        this.department = department;
+        this.assignCourses = new ArrayList<>();
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void assignCourse(Course course) {
+        assignCourses.add(course);
+        course.setInstructor(this);
+        System.out.println(getName() + " assigned to " + course.getCourseTitle());
+    }
+
+    public void listAssignedCourses() {
+        System.out.println("Courses assigned to " + getName() + ":");
+        for (Course course : assignCourses) {
+            System.out.println(course.getCourseTitle());
+        }
+    }
+}
