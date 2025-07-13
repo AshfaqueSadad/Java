@@ -1,0 +1,16 @@
+public class oop1 {
+
+    public static class Car {
+        String color;
+        int speed;
+
+        void drive() {
+            System.out.println("The car is running");
+        }
+
+        void showinfo() {
+            System.out.println("Color: " + color + "Speed: " + speed);
+        }
+    }
+
+}
